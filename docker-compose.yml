@@ -1,7 +1,7 @@
 services:
    build_system:
         build: .
-        image: pico 
+        image: cuongm/picobuild 
         privileged: true
         environment: 
            PICO_SDK_PATH : /pico/pico-sdk 
