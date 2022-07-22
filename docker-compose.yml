@@ -1,0 +1,15 @@
+services:
+   build_system:
+        build: .
+        image: pico 
+        privileged: true
+        environment: 
+           PICO_SDK_PATH : /pico/pico-sdk 
+        volumes:
+          - "/home/nfz/sources:/root"
+
+        restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+        stop_grace_period: "3s"
+        tty: true
+        entrypoint: /bin/bash
+        network_mode : host
